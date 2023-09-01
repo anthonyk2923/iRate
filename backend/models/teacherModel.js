@@ -9,6 +9,7 @@ const teacherSchema = new mongoose.Schema(
         true,
         'Teacher Name already taken, please check if this teacher already exists.',
       ],
+      maxLength: [20, 'teacher name to long'],
     },
   },
   { timestamps: true }

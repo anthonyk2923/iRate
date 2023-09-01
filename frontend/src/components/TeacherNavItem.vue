@@ -1,5 +1,5 @@
 <template>
-    <div @click="$emit('BtnClick', allRatings)" href="#" class="list-group-item list-group-item-action">
+    <div @click="$emit('BtnClick', allRatings, data._id)" href="#" class="list-group-item list-group-item-action">
         <div class=" d-flex w-100 justify-content-between">
             <h5 id='nameOfTeacher' class="mb-1">{{ data.name }}</h5>
             <!-- <small class="text-muted">{{ this.averageRating }}/5</small> -->
@@ -26,7 +26,7 @@ export default {
         return {
             totalRatings: null,
             averageRating: null,
-            allRatings: null
+            allRatings: null,
         }
     },
     methods: {

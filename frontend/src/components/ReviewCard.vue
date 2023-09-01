@@ -4,6 +4,7 @@
             <div class="card">
                 <div class="card-body py-4 mt-2">
                     <h5 class="font-weight-bold">{{ currentData.name }}</h5>
+                    <p><strong>{{ currentData.title }}</strong></p>
                     <star-rating class="list-unstyled d-flex justify-content-center" :rating="currentData.score"
                         :increment=0.01 read-only :star-size="20" />
                     <p class="mb-2">
