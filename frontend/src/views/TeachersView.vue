@@ -144,7 +144,6 @@ export default {
             rtl: false
           });
         }
-        console.log(res.json())
 
 
         if (res.status == 400) {
@@ -177,9 +176,43 @@ export default {
           'Content-Type': 'application/json'
         },
         body: JSON.stringify(ratingFormData)
+      }).then(res => res).then(res => {
+        if (res.status == 200) {
+          toast.success("Successfully submited form, new teacher will apear soon!", {
+            position: "top-center",
+            timeout: 5000,
+            closeOnClick: true,
+            pauseOnFocusLoss: true,
+            pauseOnHover: true,
+            draggable: true,
+            draggablePercent: 0.6,
+            showCloseButtonOnHover: false,
+            hideProgressBar: true,
+            closeButton: "button",
+            icon: true,
+            rtl: false
+          });
+        }
+        console.log(res.json())
 
-      }).then(res => res.json()).then(res => console.log(res))
 
+        if (res.status == 400) {
+          toast.error("Something went wrong, check if the you filled out all fields ", {
+            position: "top-center",
+            timeout: 5000,
+            closeOnClick: true,
+            pauseOnFocusLoss: true,
+            pauseOnHover: true,
+            draggable: true,
+            draggablePercent: 0.6,
+            showCloseButtonOnHover: false,
+            hideProgressBar: true,
+            closeButton: "button",
+            icon: true,
+            rtl: false
+          });
+        }
+      })
     })
   }
 }
