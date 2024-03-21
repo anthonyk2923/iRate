@@ -29,6 +29,6 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
-app.listen(process.env.PORT, () =>
+app.listen(process.env.PORT || 4444, () =>
   console.log(`Listening on port ${process.env.PORT}`.dim.bold)
 );

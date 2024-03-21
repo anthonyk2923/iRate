@@ -4,6 +4,6 @@ module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: path.resolve(__dirname, '../backend/public'),
   devServer: {
-    proxy: `http://localhost:${process.env.PORT}`,
+    proxy: `http://localhost:${process.env.PORT || 4444}`,
   },
 });
