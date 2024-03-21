@@ -116,6 +116,9 @@
     "whatwg-url": "^11.0.0",
     "yallist": "^4.0.0"
   },
+  "optionalDependencies": {
+    "fsevents": "^2.3.2"
+},
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node backend/index.js",

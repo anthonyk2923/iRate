@@ -13,7 +13,7 @@ const post = async (req, res) => {
     req.body.score >= 1 &&
     req.body.body
   ) {
-    res.status(201).json(
+    res.status(200).json(
       await Rating.create({
         name: reqName,
         teacher: req.body.teacher,
