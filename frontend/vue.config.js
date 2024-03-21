@@ -3,7 +3,7 @@ const path = require('path');
 module.exports = defineConfig({
   transpileDependencies: true,
   outputDir: path.resolve(__dirname, '../backend/public'),
-  devServer: {
-    proxy: `http://localhost:4444`,
-  },
+  // devServer: {
+  //   proxy: `http://localhost:4444`,
+  // },
 });

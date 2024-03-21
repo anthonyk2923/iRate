@@ -164,7 +164,11 @@ export default {
       this.currentId = id;
     },
     async getData() {
-      const data = await fetch("/api/teachers");
+      const data = await fetch("/api/teachers", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+      });
       this.teachersData = JSON.parse(JSON.stringify(await data.json()));
     },
     async runfunc() {
