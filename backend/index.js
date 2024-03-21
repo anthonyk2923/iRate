@@ -12,7 +12,7 @@ require('dotenv').config();
 app = express();
 
 process.on('uncaughtException', function (err) {
-  console.error(err);
+  console.log(err);
   console.log('Node NOT Exiting...');
 });
 
@@ -23,7 +23,7 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cors());
 
 app.use(express.static(path.join(__dirname, 'public')));
-app.get('/', (req, res) => {
+app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 
