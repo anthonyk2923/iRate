@@ -18,7 +18,7 @@ process.on('uncaughtException', function (err) {
 
 db.connectDb();
 
-app.use(express.static(path.join(__dirname, 'public')));
+// app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cors());
@@ -29,7 +29,7 @@ app.get('api/teachers', (req, res) => {
 app.use('/api/teachers', require('./routes/teacherRoutes'));
 app.use('/api/ratings', require('./routes/ratingRoutes'));
 
-// app.get('*', (req, res) => {
+// app.get('/', (req, res) => {
 //   res.sendFile(path.join(__dirname, 'public/index.html'));
 // });
 
