@@ -25,7 +25,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/api/teachers', require('./routes/teacherRoutes'));
 app.use('/api/ratings', require('./routes/ratingRoutes'));
-app.get('*', (req, res) => {
+
+app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, 'public/index.html'));
 });
 app.listen(process.env.PORT, () =>
