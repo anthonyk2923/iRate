@@ -27,13 +27,20 @@ app.use(bodyParser.json());
 
 db.connectDb();
 
+app.get('/favicon.ico', (req, res) =>
+  res.sendFile(__dirname + '/public/favicon.ico')
+);
+
 app.use('/api/teachers', require('./routes/teacherRoutes'));
 app.use('/api/ratings', require('./routes/ratingRoutes'));
 
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'index.html'));
-});
+if (process.env.NODE_ENV === 'production') {
+  // Static folder
+  app.use(express.static(__dirname + '/public/'));
 
-app.listen(process.env.PORT || 4444, () =>
-  console.log(`Listening on port ${process.env.PORT}`.dim.bold)
-);
+  // Handle SPA
+  app.get('/', (req, res) => res.sendFile(__dirname + '/public/index.html'));
+}
+app.listen(process.env.PORT, () => {
+  console.log(`server listening on port ${process.env.PORT}`.dim.bold);
+});
